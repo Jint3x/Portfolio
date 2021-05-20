@@ -1,0 +1,15 @@
+@use "../_global.scss";
+
+$redLineColor: global.$redLineColor;
+$yellowLineColor: global.$yellowLineColor;
+$webpageBackgroundColor: global.$webpageBackgroundColor;
+$topBackgroundColor: linear-gradient(183.41deg, rgba(35, 35, 35, 0.040515) 72.14%, rgba(36, 36, 36, 0) 72.14%, #000000 96.98%), #222121;
+
+
+@media (min-width: 0px) {
+    $fontSize: 1rem;
+    $fontSizeHeader: 1.8rem;
+    $lineHeight: 1.5rem;
+
+    
+}

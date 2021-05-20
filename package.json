@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "gatsby": "^3.5.0",
+    "gatsby-cli": "^3.5.0",
     "gatsby-plugin-sass": "^4.5.0",
     "gatsby-plugin-typescript": "^3.5.0",
     "react": "^17.0.2",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "@babel/plugin-transform-react-jsx": "^7.13.12",
     "@babel/preset-env": "^7.14.2",
+    "@babel/preset-typescript": "^7.13.0",
     "@testing-library/react": "^11.2.6",
     "@types/jest": "^26.0.23",
     "identity-obj-proxy": "^3.0.0",

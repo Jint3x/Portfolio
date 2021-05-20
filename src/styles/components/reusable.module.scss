@@ -1,0 +1,34 @@
+@use "../_global.scss";
+
+@media (min-width: 0px) {
+    $fontSize: 1rem;
+
+    .iconedParagraph {
+        display: flex;
+        align-items: center;
+        color: global.$textColor;
+    
+        // The default image settings
+        img {
+            width: 30px;
+            padding-right: 3px;
+        }
+    
+        .mainIcon {
+            width: 40px;
+        }
+    
+        // When it is not a main icon paragraph
+        span {
+            font-size: $fontSize;
+        }
+    
+        // When the icon paragraph is a main one
+        a {
+            text-decoration: none;
+            color: global.$textColor;
+            font-size: $fontSize + 0.3rem;
+        }
+    }
+}
+
