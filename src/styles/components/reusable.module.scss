@@ -2,6 +2,8 @@
 
 @media (min-width: 0px) {
     $fontSize: 1rem;
+    $fontSizeHeader: 1.8rem;
+
 
     .iconedParagraph {
         display: flex;
@@ -30,5 +32,24 @@
             font-size: $fontSize + 0.3rem;
         }
     }
-}
 
+
+    .yellowLineHeader {
+        padding: 1em 0;
+        max-width: 400px;
+
+        h1 {
+            color: global.$textColor;
+            font-size: $fontSizeHeader;
+        }
+
+        hr {
+            margin-top: 0.5rem;
+            max-width: 200px;
+            background-color: global.$yellowLineColor;
+            height: 4px;
+            border: none;
+            margin-left: 15px;
+        }
+    }
+}

@@ -1,6 +1,6 @@
 import React from "react"
 import { screen, render } from "@testing-library/react"
-import { IconedParagraph } from "../../../src/components/reusable"
+import { IconedParagraph, YellowLineHeader } from "../../../src/components/reusable"
 
 
 test("Renders the correct image data and span element", () => {
@@ -40,4 +40,12 @@ test("Renders a main icon paragraph", () => {
     expect(link.nodeName).toBe("A");
 
     expect(img.src).toBe("http://example.com/special/page");
+})
+
+
+test("Renders the correct text", () => {
+    render(<YellowLineHeader text={"Hello world!"} />)
+
+    expect(screen.getByText("Hello world!").nodeName).toBe("H1");
+    
 })

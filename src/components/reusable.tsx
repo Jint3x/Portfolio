@@ -1,6 +1,8 @@
 import React from "react"
 import * as style from "../styles/components/reusable.module.scss"
 
+import Animate from "react-animate-on-scroll"
+
 
 /**
  * A paragraph with an icon on its left. It can be a 
@@ -42,5 +44,30 @@ interface IconedParagraph_I {
 }
 
 
+/**
+ * A header which is used for each section on the homepage.
+ */
+interface YellowLineHeader_I {
+    text: string
+}
 
-export { IconedParagraph }
+function YellowLineHeader(props: YellowLineHeader_I) {
+    return (
+        <div className={style.yellowLineHeader}>
+            <Animate
+             animateIn={"fadeInLeft"}
+             duration={1}
+            >
+                <h1>{props.text}</h1>
+            </Animate>
+            <Animate
+             animateIn={"fadeInLeft"}
+             duration={1.5}
+            >
+                <hr />
+            </Animate>
+        </div>
+    )
+}   
+
+export { IconedParagraph, YellowLineHeader }

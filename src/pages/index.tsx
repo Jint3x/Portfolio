@@ -2,7 +2,7 @@ import React from "react"
 import "../styles/global.scss"
 import * as style from "../styles/pages/index.module.scss"
 
-import { IconedParagraph } from "../components/reusable"
+import { IconedParagraph, YellowLineHeader } from "../components/reusable"
 import Animate from "react-animate-on-scroll"
 
 function Homepage() {
@@ -96,7 +96,11 @@ function Navigation() {
 
 
 function Projects() {
-    return null
+    return (
+        <div>
+            <YellowLineHeader text={"Planned & Finished Projects"} />
+        </div>
+    )
 }
 
 
