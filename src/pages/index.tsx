@@ -3,6 +3,7 @@ import "../styles/global.scss"
 import * as style from "../styles/pages/index.module.scss"
 
 import { IconedParagraph } from "../components/reusable"
+import Animate from "react-animate-on-scroll"
 
 function Homepage() {
     return (
@@ -19,8 +20,13 @@ function Homepage() {
 function FrontView() {
     return (
         <div id={style.frontView}>
+            <Animate
+             animateOnce={true}
+             animateIn={"fadeInTop"}
+            >
             <WebsiteEntry />
             <Navigation />
+            </Animate>
         </div>
     )
 }
