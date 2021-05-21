@@ -18,7 +18,7 @@ function Homepage() {
 
 function FrontView() {
     return (
-        <div>
+        <div id={style.frontView}>
             <WebsiteEntry />
             <Navigation />
         </div>
@@ -31,15 +31,14 @@ function FrontView() {
  */
 function WebsiteEntry() {
     return (
-        <div>
-            <div>
-                <img  alt={"A portfolio image"}/>
+        <div id={style.mainWebsiteEntry}>
+            <div id={style.websiteEntryFirst}>
+                <img src={"/profile_image.png"}  alt={"A portfolio image"}/>
                 <h2>Jint3x</h2>
                 <p>- Software/Web Developer</p>
             </div>
-            <div>
+            <div id={style.websiteEntrySecond}>
                 <h2>Get in touch!</h2>
-                <hr />
                 
                 <IconedParagraph 
                  src={"/github.png"}
@@ -77,7 +76,7 @@ function WebsiteEntry() {
  */
 function Navigation() {
     return (
-        <div>
+        <div id={style.navigation}>
             <nav>
                 <a href={"#projects"}>Projects</a>
                 <div></div>

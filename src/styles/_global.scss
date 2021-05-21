@@ -3,3 +3,11 @@ $backgroundColor: #000000;
 $redLineColor: #D10000;
 $yellowLineColor: #EBEF18;
 $webpageBackgroundColor: #000000;
+$fontFamily: "Inter", 'Times New Roman', Times, serif;
+
+
+
+@font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter/static/Inter-Medium.ttf");
+}

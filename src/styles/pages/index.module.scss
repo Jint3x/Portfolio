@@ -1,15 +1,151 @@
 @use "../_global.scss";
 
+
 $redLineColor: global.$redLineColor;
 $yellowLineColor: global.$yellowLineColor;
 $webpageBackgroundColor: global.$webpageBackgroundColor;
 $topBackgroundColor: linear-gradient(183.41deg, rgba(35, 35, 35, 0.040515) 72.14%, rgba(36, 36, 36, 0) 72.14%, #000000 96.98%), #222121;
+$textColor: global.$textColor;
 
 
 @media (min-width: 0px) {
-    $fontSize: 1rem;
-    $fontSizeHeader: 1.8rem;
+    $fontSize: 0.9rem;
+    $fontSizeHeader: 1.6rem;
     $lineHeight: 1.5rem;
 
+
+    #frontView {
+        background: linear-gradient(183.41deg, rgba(35, 35, 35, 0.040515) 72.14%, rgba(36, 36, 36, 0) 72.14%, #000000 96.98%), #222121;
+        color: $textColor;
+    }
+
+
+    #websiteEntryFirst {
+        padding: 2em 0;
+
+        img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0.2em auto;
+            display: block;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 1em;
+            font-size: $fontSizeHeader;
+        }
+
+        p {
+            text-align: center;
+            font-size: $fontSize;
+        }
+    }
+
+
+    #websiteEntrySecond {
+        width: 85%;
+        margin: 1em auto;
+
+        h2 {
+            width: fit-content;
+            width: -moz-fit-content;
+            width: -webkit-fit-content;
+            font-size: $fontSizeHeader;
+            border-bottom: 3px solid $redLineColor;
+        }
+
+        p {
+            text-align: center;
+            margin: 1.2em 0;
+            font-size: $fontSize;
+
+            a {
+                font-size: $fontSize;
+                transition: color 0.5s;
+
+                &:hover {
+                    color: lighten($textColor, 10%);
+                }
+            }
+        }
+    }
+
+
+    #navigation {
+        nav {
+            max-width: 280px;
+            margin: 0 auto;
+            padding: 2em 0 1em 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+            a {
+                font-size: $fontSize;
+                color: $textColor;
+                text-decoration: none;
+                transition: color 0.5s;
+                
+
+                &:hover {
+                    color: lighten($textColor, 10%);
+                }
+            }
+
+            div {
+                height: 20px;
+                width: 2.5px;
+                background-color: $redLineColor;
+            }
+        }
+    }
     
+}
+
+
+@media (min-width: 500px) {
+    #websiteEntrySecond {
+        width: 75%;
+    }
+}
+
+
+@media (min-width: 600px) {
+    $fontSize: 1.2em;
+
+    #mainWebsiteEntry {
+        padding: 2em 0;
+        margin: 0 auto;
+        width: 90%;
+        max-width: 900px;
+        display: flex;
+        justify-content: space-around;
+        align-content: center;
+        flex-direction: row;
+
+        div {
+            width: 40%;
+            margin: 0;
+        }
+    }
+
+    #websiteEntrySecond {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h2 {
+            margin: 0 auto;
+        }
+
+        p {
+            a {
+                font-size: $fontSize;
+            }
+        }
+    }
+
+ 
 }

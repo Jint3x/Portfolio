@@ -1,4 +1,7 @@
+@use "./_global.scss";
+
 * {
     margin: 0;
     box-sizing: content-box;
+    font-family: global.$fontFamily;
 }
