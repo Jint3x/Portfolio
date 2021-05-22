@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef } from "react"
 import "../styles/global.scss"
 import * as style from "../styles/pages/index.module.scss"
 
@@ -47,7 +47,7 @@ function WebsiteEntry() {
                 <h2>Get in touch!</h2>
                 
                 <IconedParagraph 
-                 src={"/github.png"}
+                 src={"/icons/github.png"}
                  alt={"Github Icon"}
                  text={"github.com/Jint3x"}
                  href={"https://github.com/Jint3x"}
@@ -56,7 +56,7 @@ function WebsiteEntry() {
                 />
 
                 <IconedParagraph 
-                 src={"/twitter.png"}
+                 src={"/icons/twitter.png"}
                  alt={"Twitter Icon"}
                  text={"twitter.com/Jint3x"}
                  href={"https://twitter.com/Jint3x"}
@@ -65,7 +65,7 @@ function WebsiteEntry() {
                 />
 
                 <IconedParagraph 
-                 src={"/gmail.png"}
+                 src={"/icons/gmail.png"}
                  alt={"Gmail Icon"}
                  text={"devaccount@gmail.com"}
                  href={""}
@@ -97,8 +97,75 @@ function Navigation() {
 
 function Projects() {
     return (
-        <div>
+        <div className={style.darkBackground}>
             <YellowLineHeader text={"Planned & Finished Projects"} />
+            <Project 
+             description={
+                 `This is a medium-sized description to apply the styles. Now I need to write even more text.
+                 I wonder what I can write about, doesn't really matter. I need even more text.... Ok, this is
+                 too much text.... Let's write a litte bit more.`
+                }
+             readMore={"Test"}
+             projectImage={"/projects/fallen.png"}
+             projectUrl={"https://fallensmp.com"}
+            />
+        </div>
+    )
+}
+
+
+/**
+ * Information for each project I've worked on. Each project can be clicked and 
+ * redirected to its website. You can also read more on that project.
+ */
+interface Project_I {
+    description: string,
+    readMore: string,
+    projectImage: string,
+    projectUrl: string
+}
+
+function Project(props: Project_I) {
+    // Will be used on an anchor element. It will be programatically clicked 
+    // when someone clicks on the project image.
+    const urlRef: any = useRef(null);
+
+
+
+    return (
+        <div className={style.projectContainer}>
+            <div className={style.imageHolder}>
+                <a 
+                 href={props.projectUrl}
+                 ref={urlRef}
+                 target={"_blank"}
+                />
+
+                <div 
+                 style={{backgroundImage: `url(${props.projectImage})`}} 
+                 className={style.projectImage}
+                 onClick={() => urlRef.current.click() }
+                />
+
+                <div className={style.projectView}>
+                    <IconedParagraph 
+                    href={props.projectUrl}
+                    isMain={true}
+                    openNewTab={true}
+                    alt={"View Icon"}
+                    src={"/project_homepage.png"}
+                    text={"View"}
+                    />
+                </div>
+            </div>
+            <div id={style.projectDescription}>
+                <div>
+                    <p>Read More</p>
+                </div>
+                <p>
+                    {props.description}
+                </p>
+            </div>
         </div>
     )
 }
@@ -118,5 +185,5 @@ function About() {
 
 
 
-export { FrontView, Projects, Skills, About }
+export { FrontView, Project, Skills, About }
 export default Homepage
