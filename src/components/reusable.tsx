@@ -57,6 +57,8 @@ function YellowLineHeader(props: YellowLineHeader_I) {
             <Animate
              animateIn={"fadeInLeft"}
              duration={1}
+             offset={100}
+             animateOnce={true}
             >
                 <h1>{props.text}</h1>
             </Animate>
@@ -64,6 +66,8 @@ function YellowLineHeader(props: YellowLineHeader_I) {
             <Animate
              animateIn={"fadeInLeft"}
              duration={1.5}
+             offset={100}
+             animateOnce={true}
             >
                 <hr />
             </Animate>

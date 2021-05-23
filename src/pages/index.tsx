@@ -7,11 +7,13 @@ import Animate from "react-animate-on-scroll"
 
 function Homepage() {
     return (
-        <div>
+        <div id={style.bodyHolder}>
             <FrontView />
-            <Projects />
-            <Skills />
-            <About />
+            <div id={style.darkBackground}>
+                <Projects />
+                <Skills />
+                <About />
+            </div>
         </div>
     )
 }
@@ -97,8 +99,11 @@ function Navigation() {
 
 function Projects() {
     return (
-        <div className={style.darkBackground}>
-            <YellowLineHeader text={"Planned & Finished Projects"} />
+        <div id={style.projectsHolder}>
+            <div className={style.headerPadding}>
+                <YellowLineHeader text={"Planned & Finished Projects"} />
+            </div>
+
             <Project 
              description={
                  `This is a medium-sized description to apply the styles. Now I need to write even more text.
@@ -108,6 +113,31 @@ function Projects() {
              readMore={"Test"}
              projectImage={"/projects/fallen.png"}
              projectUrl={"https://fallensmp.com"}
+             moveToTheRight={0}
+            />
+
+            <Project 
+             description={
+                 `This is a medium-sized description to apply the styles. Now I need to write even more text.
+                 I wonder what I can write about, doesn't really matter. I need even more text.... Ok, this is
+                 too much text.... Let's write a litte bit more.`
+                }
+             readMore={"Test"}
+             projectImage={"/projects/fallen.png"}
+             projectUrl={"https://fallensmp.com"}
+             moveToTheRight={1}
+            />
+
+            <Project 
+             description={
+                 `This is a medium-sized description to apply the styles. Now I need to write even more text.
+                 I wonder what I can write about, doesn't really matter. I need even more text.... Ok, this is
+                 too much text.... Let's write a litte bit more.`
+                }
+             readMore={"Test"}
+             projectImage={"/projects/fallen.png"}
+             projectUrl={"https://fallensmp.com"}
+             moveToTheRight={2}
             />
         </div>
     )
@@ -123,6 +153,8 @@ interface Project_I {
     readMore: string,
     projectImage: string,
     projectUrl: string
+
+    moveToTheRight: number,
 }
 
 function Project(props: Project_I) {
@@ -130,43 +162,55 @@ function Project(props: Project_I) {
     // when someone clicks on the project image.
     const urlRef: any = useRef(null);
 
-
+    // Depending on which number is passed, the project will be assigned to a div that will 
+    // move it on the webpage.
+    let moveableObject = [style.firstDiv, style.secondDiv, style.thirdDiv][props.moveToTheRight];
 
     return (
-        <div className={style.projectContainer}>
-            <div className={style.imageHolder}>
-                <a 
-                 href={props.projectUrl}
-                 ref={urlRef}
-                 target={"_blank"}
-                />
-
-                <div 
-                 style={{backgroundImage: `url(${props.projectImage})`}} 
-                 className={style.projectImage}
-                 onClick={() => urlRef.current.click() }
-                />
-
-                <div className={style.projectView}>
-                    <IconedParagraph 
+        <Animate
+         animateIn={"fadeInLeft"}
+         offset={150}
+         animateOnce={true}
+        >
+            <div className={`${style.projectContainer} ${moveableObject}`}>
+                <div className={style.imageHolder}>
+                    {
+                    /* This anchor element will be invisible and will be programatically 
+                    clicked when someone clicks on the project image below. */
+                    }
+                    <a 
                     href={props.projectUrl}
-                    isMain={true}
-                    openNewTab={true}
-                    alt={"View Icon"}
-                    src={"/project_homepage.png"}
-                    text={"View"}
+                    ref={urlRef}
+                    target={"_blank"}
                     />
+
+                    <div 
+                    style={{backgroundImage: `url(${props.projectImage})`}} 
+                    className={style.projectImage}
+                    onClick={() => urlRef.current.click() }
+                    />
+
+                    <div className={style.projectView}>
+                        <IconedParagraph 
+                        href={props.projectUrl}
+                        isMain={true}
+                        openNewTab={true}
+                        alt={"View Icon"}
+                        src={"/project_homepage.png"}
+                        text={"View"}
+                        />
+                    </div>
+                </div>
+                <div className={style.projectDescription}>
+                    <div>
+                        <p>Read More</p>
+                    </div>
+                    <p>
+                        {props.description}
+                    </p>
                 </div>
             </div>
-            <div id={style.projectDescription}>
-                <div>
-                    <p>Read More</p>
-                </div>
-                <p>
-                    {props.description}
-                </p>
-            </div>
-        </div>
+        </Animate>
     )
 }
 
