@@ -216,8 +216,90 @@ function Project(props: Project_I) {
 
 
 function Skills() {
-    return null
+    return (
+        <div id={style.skillList}>
+            <div className={style.headerPadding}>
+                <YellowLineHeader text={"Programming Skills"} />
+            </div>
+
+            <div id={style.skills}>
+                <div id={style.leftSidedSkills}>
+                    <SkillList 
+                    header={"Languages"}
+                    skills={[
+                        {image: "/icons/js.png", icon_alt: "Javascript Icon", skill: "Javascript/Typescript (Proefficient)"},
+                        {image: "/icons/rust.png", icon_alt: "Rust Icon", skill: "Rust (Beginner)"},
+                    ]}
+                    />
+
+                    <SkillList 
+                    header={"Databases"}
+                    skills={[
+                        {image: "/icons/mongodb.png", icon_alt: "MongoDB Icon", skill: "MongoDB (Medium)"},
+                        {image: "/icons/postgre.png", icon_alt: "PostgreSQL Icon", skill: "PostgreSQL (Beginner)"},
+                    ]}
+                    />
+                </div>
+
+                <div id={style.rightSidedSkills}>
+                    <SkillList 
+                    header={"Tools, Frameworks, Libraries, Runtimes"}
+                    skills={[
+                        {image: "/icons/git.png", icon_alt: "Git Icon", skill: "Git/Github (Medium)"},
+                        {image: "/icons/react.png", icon_alt: "React Icon", skill: "React (Medium)"},
+                        {image: "/icons/nodejs.png", icon_alt: "NodeJS Icon", skill: "NodeJS (Medium)"},
+                        {image: "/icons/jest.png", icon_alt: "Jest Icon", skill: "Jest (Medium)"},
+                    ]}
+                    />
+                </div>
+            </div>
+        </div>
+    )
 }
+
+
+
+interface SkillList_I {
+    header: string,
+    skills: Skill_I[]
+}
+
+
+interface Skill_I {
+    icon_alt: string,
+    image: string,
+    skill: string,
+}
+
+
+function SkillList(props: SkillList_I) {
+    let listOfSkills = props.skills.map(skill => {
+        return (
+            <IconedParagraph 
+            src={skill.image}
+            alt={skill.icon_alt}
+            text={skill.skill}
+        />
+        )
+    })
+
+    return (
+        <Animate
+         animateIn={"fadeInLeft"}
+         offset={150}
+         animateOnce={true}
+        >
+        <div className={style.skillSet}>
+            <h2>{props.header}</h2>
+            {listOfSkills}
+        </div>
+        </Animate>
+    )
+}
+
+
+
+
 
 
 function About() {
@@ -229,5 +311,5 @@ function About() {
 
 
 
-export { FrontView, Project, Skills, About }
+export { FrontView, Project, SkillList, About }
 export default Homepage

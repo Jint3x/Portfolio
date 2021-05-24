@@ -8,7 +8,7 @@
     "develop": "gatsby develop --port 2000",
     "clean": "gatsby clean",
     "build": "gatsby build",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve --port 3000 -H 0.0.0.0"
   },
   "keywords": [],
   "author": "Jint3x",

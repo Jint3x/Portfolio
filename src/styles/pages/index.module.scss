@@ -105,6 +105,7 @@ $textColor: global.$textColor;
 
     #darkBackground {
         background-color: $webpageBackgroundColor;
+        color: $textColor
     }
 
 
@@ -128,7 +129,6 @@ $textColor: global.$textColor;
         max-width: 280px;
         margin: 2em auto;
         border-radius: 12px;
-        border: 2px solid #4E4E4E;
         overflow: hidden;
     }
 
@@ -183,24 +183,48 @@ $textColor: global.$textColor;
         position: relative;
         height: 150px;
         overflow: hidden;
+        background: rgb(32, 32, 32);
 
         &>div {
-            height: 25px;
+            height: 50px;
             width: 100%;
             position: absolute;
             bottom: 0;
-            background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0.7) 80%,  rgba(0, 0, 0, 0.29) 100%);;
-        
+            background: linear-gradient(0deg, rgb(32, 32, 32) 0%, rgba(32, 32, 32, 0.7) 70%,  rgba(32, 32, 32, 0.20) 100%);;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+
             p {
                 text-align: right;
                 text-decoration: underline;
                 margin-right: 10px;
                 cursor: pointer;
+                padding: 0 0 5px 15px;
             }
         }
 
         &>p {
             margin: 0.3em;
+        }
+    }
+
+
+    #skills {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+
+    .skillSet {
+        padding: 1.4em 0;
+
+        h2 {
+            padding: 0.5em 0;
+        }
+
+        p {
+            padding: 0.5em 0;
         }
     }
 }
@@ -255,15 +279,18 @@ $textColor: global.$textColor;
         width: 500px;
     }
 
+
     .imageHolder {
         width: 40%;
     }
+
 
     .projectImage {
         height: 100%;
         width: 100%;
         background-position: center;
     }
+
 
     .projectDescription {
         width: 60%;
@@ -279,19 +306,42 @@ $textColor: global.$textColor;
         padding: 5em 0;
     }
 
+
     .projectContainer {
         margin: 2em 0;
     }
+
 
     .firstDiv {
         margin: 2em calc(50% - 100px) 2em calc(50% - 400px);
     }
 
+
     .secondDiv {
         margin: 2em auto;
     }
 
+  
     .thirdDiv {
         margin: 2em calc(50% - 400px) 2em calc(50% - 100px);
+    }
+
+
+    #skills {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #skillList {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    #leftSidedSkills {
+        width: 50%;
+    }
+
+    #rightSidedSkills {
+        width: 50%;
     }
 }

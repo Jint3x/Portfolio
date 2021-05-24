@@ -1,4 +1,4 @@
-import Home, { FrontView, Project } from "../../../src/pages/index"
+import Home, { FrontView, Project, SkillList } from "../../../src/pages/index"
 import { screen, render } from "@testing-library/react"
 import React from "react"
 
@@ -43,6 +43,7 @@ test("Renders a project and checks its URL", () => {
          readMore={"More Text"}
          projectImage={"/image/example"}
          projectUrl={"http://example.com/"}
+         moveToTheRight={1}
         />
     )
 
@@ -61,6 +62,7 @@ test("Renders a project and checks its text", () => {
          readMore={"More Text"}
          projectImage={"/image/example"}
          projectUrl={"http://example.com/"}
+         moveToTheRight={1}
         />
     )
 
@@ -70,4 +72,65 @@ test("Renders a project and checks its text", () => {
 })
 
 
+// Not implemented yet
 test("Renders a project and reads more about it", () => null)
+
+
+test("Renders a skill list with the correct heading", () => {
+    const { container } = render(
+        <SkillList 
+         header={"Special Skills"} 
+         skills={[]} 
+        />
+    );
+
+    let skill_header = screen.getByText("Special Skills");
+    let skills = container.querySelectorAll("p");
+
+    expect(skill_header.nodeName).toBe("H2");
+    expect(skills.length).toBe(0);
+})
+
+
+test("Renders a skill list with the correct paragraphs (text)", () => {
+    render(
+        <SkillList 
+         header={"Special Skills"} 
+         skills={[
+            {image: "/special/page_1", skill: "React", icon_alt: "React Icon"},
+            {image: "/special/page_2", skill: "MongoDB", icon_alt: "MongoDB Icon"},
+         ]} 
+        />
+    );
+
+    let skillReact = screen.getByText("React");
+    let skillMongoDB = screen.getByText("MongoDB");
+
+    expect(skillReact.nodeName).toBe("SPAN");
+    expect(skillMongoDB.nodeName).toBe("SPAN");
+
+    expect(skillReact.parentElement.nodeName).toBe("P");
+    expect(skillMongoDB.parentElement.nodeName).toBe("P");
+})
+
+
+test("Renders a skill list with the correct paragraphs (icon url)", () => {
+    render(
+        <SkillList 
+         header={"Special Skills"} 
+         skills={[
+             {image: "/special/page_1", skill: "React", icon_alt: "React Icon"},
+             {image: "/special/page_2", skill: "MongoDB", icon_alt: "MongoDB Icon"},
+         ]} 
+        />
+    );
+
+    let skillReactIcon = screen.getByAltText("React Icon") as HTMLImageElement;
+    let skillMongoDBIcon = screen.getByAltText("MongoDB Icon") as HTMLImageElement;
+
+    expect(skillReactIcon.src).toBe("http://localhost/special/page_1");
+    expect(skillMongoDBIcon.src).toBe("http://localhost/special/page_2");
+
+    expect(skillReactIcon.parentElement.nodeName).toBe("P");
+    expect(skillMongoDBIcon.parentElement.nodeName).toBe("P");
+})
