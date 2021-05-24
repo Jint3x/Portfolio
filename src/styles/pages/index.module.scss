@@ -14,6 +14,10 @@ $textColor: global.$textColor;
     $lineHeight: 1.5rem;
 
 
+    /*
+        The first part of the webpage, shows contact info and portfolio image
+    */
+    
     #frontView {
         background: linear-gradient(to bottom, rgba(36, 36, 36, 1) 80%, #000000 100%);
         color: $textColor;
@@ -105,7 +109,7 @@ $textColor: global.$textColor;
 
     #darkBackground {
         background-color: $webpageBackgroundColor;
-        color: $textColor
+        color: $textColor;
     }
 
 
@@ -113,6 +117,10 @@ $textColor: global.$textColor;
         margin-left: 20px;
     }
 
+
+    /*
+        The second part of the webpage, shows planned & finished projects
+    */
 
     #projectsHolder {
         padding: 3em 0;
@@ -132,6 +140,7 @@ $textColor: global.$textColor;
         overflow: hidden;
     }
 
+
     .imageHolder {
         overflow: hidden;
         position: relative;
@@ -140,6 +149,7 @@ $textColor: global.$textColor;
             transform: scale(1.1);
         }
     }
+
 
     .projectImage {
         background-color: rgba(255, 255, 255, 0.479);
@@ -171,6 +181,7 @@ $textColor: global.$textColor;
                 font-size: 0.9em;
             }
 
+
             img {
                 height: 25px;
                 width: 25px !important;
@@ -195,6 +206,7 @@ $textColor: global.$textColor;
             align-items: flex-end;
             justify-content: flex-end;
 
+
             p {
                 text-align: right;
                 text-decoration: underline;
@@ -204,11 +216,15 @@ $textColor: global.$textColor;
             }
         }
 
+
         &>p {
             margin: 0.3em;
         }
     }
 
+    /*
+        The thrid part of the webpage, shows a list of my current skills.
+    */
 
     #skills {
         width: 80%;
@@ -332,15 +348,18 @@ $textColor: global.$textColor;
         justify-content: space-around;
     }
 
+
     #skillList {
         max-width: 1200px;
         margin: 0 auto;
     }
 
+
     #leftSidedSkills {
         width: 50%;
     }
 
+    
     #rightSidedSkills {
         width: 50%;
     }

@@ -29,8 +29,8 @@ interface IconedParagraph_I {
             {
                 props.isMain ? 
                 <a 
-                target={props.openNewTab ? "_blank" : "_self"} 
-                href={props.href}
+                 target={props.openNewTab ? "_blank" : "_self"} 
+                 href={props.href}
                 >
                     {props.text}
                 </a> 
@@ -60,7 +60,9 @@ function YellowLineHeader(props: YellowLineHeader_I) {
              offset={100}
              animateOnce={true}
             >
-                <h1>{props.text}</h1>
+                <h1>
+                    {props.text}
+                </h1>
             </Animate>
             
             <Animate

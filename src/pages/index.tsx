@@ -21,15 +21,17 @@ function Homepage() {
 
 function FrontView() {
     return (
+        <section>
         <div id={style.frontView}>
             <Animate
              animateOnce={true}
              animateIn={"fadeInTop"}
             >
-            <WebsiteEntry />
-            <Navigation />
+                <WebsiteEntry />
+                <Navigation />
             </Animate>
         </div>
+        </section>
     )
 }
 
@@ -41,7 +43,10 @@ function WebsiteEntry() {
     return (
         <div id={style.mainWebsiteEntry}>
             <div id={style.websiteEntryFirst}>
-                <img src={"/profile_image.png"}  alt={"A portfolio image"}/>
+                <img 
+                 src={"/profile_image.png"}  
+                 alt={"A portfolio image"}
+                />
                 <h2>Jint3x</h2>
                 <p>- Software/Web Developer</p>
             </div>
@@ -99,6 +104,7 @@ function Navigation() {
 
 function Projects() {
     return (
+        <section>
         <div id={style.projectsHolder}>
             <div className={style.headerPadding}>
                 <YellowLineHeader text={"Planned & Finished Projects"} />
@@ -106,10 +112,10 @@ function Projects() {
 
             <Project 
              description={
-                 `This is a medium-sized description to apply the styles. Now I need to write even more text.
-                 I wonder what I can write about, doesn't really matter. I need even more text.... Ok, this is
-                 too much text.... Let's write a litte bit more.`
-                }
+                `This is a medium-sized description to apply the styles. Now I need to write even more text.
+                I wonder what I can write about, doesn't really matter. I need even more text.... Ok, this is
+                too much text.... Let's write a litte bit more.`
+             }
              readMore={"Test"}
              projectImage={"/projects/fallen.png"}
              projectUrl={"https://fallensmp.com"}
@@ -118,10 +124,10 @@ function Projects() {
 
             <Project 
              description={
-                 `This is a medium-sized description to apply the styles. Now I need to write even more text.
-                 I wonder what I can write about, doesn't really matter. I need even more text.... Ok, this is
-                 too much text.... Let's write a litte bit more.`
-                }
+                `This is a medium-sized description to apply the styles. Now I need to write even more text.
+                I wonder what I can write about, doesn't really matter. I need even more text.... Ok, this is
+                too much text.... Let's write a litte bit more.`
+             }
              readMore={"Test"}
              projectImage={"/projects/fallen.png"}
              projectUrl={"https://fallensmp.com"}
@@ -130,16 +136,17 @@ function Projects() {
 
             <Project 
              description={
-                 `This is a medium-sized description to apply the styles. Now I need to write even more text.
-                 I wonder what I can write about, doesn't really matter. I need even more text.... Ok, this is
-                 too much text.... Let's write a litte bit more.`
-                }
+                `This is a medium-sized description to apply the styles. Now I need to write even more text.
+                I wonder what I can write about, doesn't really matter. I need even more text.... Ok, this is
+                too much text.... Let's write a litte bit more.`
+             }
              readMore={"Test"}
              projectImage={"/projects/fallen.png"}
              projectUrl={"https://fallensmp.com"}
              moveToTheRight={2}
             />
         </div>
+        </section>
     )
 }
 
@@ -153,7 +160,6 @@ interface Project_I {
     readMore: string,
     projectImage: string,
     projectUrl: string
-
     moveToTheRight: number,
 }
 
@@ -201,6 +207,7 @@ function Project(props: Project_I) {
                         />
                     </div>
                 </div>
+
                 <div className={style.projectDescription}>
                     <div>
                         <p>Read More</p>
@@ -217,6 +224,7 @@ function Project(props: Project_I) {
 
 function Skills() {
     return (
+        <section>
         <div id={style.skillList}>
             <div className={style.headerPadding}>
                 <YellowLineHeader text={"Programming Skills"} />
@@ -254,6 +262,7 @@ function Skills() {
                 </div>
             </div>
         </div>
+        </section>
     )
 }
 
@@ -279,7 +288,7 @@ function SkillList(props: SkillList_I) {
             src={skill.image}
             alt={skill.icon_alt}
             text={skill.skill}
-        />
+            />
         )
     })
 
@@ -290,7 +299,9 @@ function SkillList(props: SkillList_I) {
          animateOnce={true}
         >
         <div className={style.skillSet}>
-            <h2>{props.header}</h2>
+            <h2>
+                {props.header}
+            </h2>
             {listOfSkills}
         </div>
         </Animate>
