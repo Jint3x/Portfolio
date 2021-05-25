@@ -1,55 +1,240 @@
 @use "../_global.scss";
 
+
+$redLineColor: global.$redLineColor;
+$yellowLineColor: global.$yellowLineColor;
+$webpageBackgroundColor: global.$webpageBackgroundColor;
+$topBackgroundColor: linear-gradient(183.41deg, rgba(35, 35, 35, 0.040515) 72.14%, rgba(36, 36, 36, 0) 72.14%, #000000 96.98%), #222121;
+$textColor: global.$textColor;
+
+
 @media (min-width: 0px) {
     $fontSize: 1rem;
     $fontSizeHeader: 1.8rem;
 
 
+    /*
+        A paragraph with an icon on its left side and a span on its right.
+        The span can also be an anchor element, if it is a main paragraph.
+    */
     .iconedParagraph {
         display: flex;
         align-items: center;
-        color: global.$textColor;
+        color: $textColor;
     
+        
         // The default image settings
         img {
             width: 30px;
             padding-right: 10px;
         }
     
+
         .mainIcon {
             width: 40px;
         }
     
+
         // When it is not a main icon paragraph
         span {
             font-size: $fontSize;
         }
     
+
         // When the icon paragraph is a main one
         a {
             text-decoration: none;
-            color: global.$textColor;
+            color: $textColor;
             font-size: $fontSize + 0.3rem;
         }
     }
 
 
+    /*
+        Each header with a yellow line below it.
+    */
     .yellowLineHeader {
         padding: 1em 0;
         max-width: 400px;
 
         h1 {
-            color: global.$textColor;
+            color: $textColor;
             font-size: $fontSizeHeader - 0.2rem;
         }
 
         hr {
             margin-top: 0.5rem;
             max-width: 200px;
-            background-color: global.$yellowLineColor;
+            background-color: $yellowLineColor;
             height: 4px;
             border: none;
             margin-left: 15px;
         }
+    }
+
+
+    /*
+        Project element
+    */
+    .projectContainer {
+        display: flex;
+        flex-direction: column;
+        color: $textColor;
+        width: 80%;
+        max-width: 280px;
+        margin: 2em auto;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+
+    .imageHolder {
+        overflow: hidden;
+        position: relative;
+
+        &:hover .projectImage {
+            transform: scale(1.1);
+        }
+    }
+
+
+    .projectImage {
+        background-color: rgba(255, 255, 255, 0.479);
+        height: 120px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: transform 0.5s;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .projectView {
+        background: linear-gradient(180deg, #222222 0%, rgb(124, 124, 124) 50%, #222121 100%);
+        width: 100px;
+        display: flex;
+        border-radius: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        p {
+            margin: 0 auto;
+
+            a {
+                font-size: 0.9em;
+            }
+
+
+            img {
+                height: 25px;
+                width: 25px !important;
+            }
+        }
+    }
+
+
+    .projectDescription {
+        position: relative;
+        height: 150px;
+        overflow: hidden;
+        background: rgb(32, 32, 32);
+
+        &>div {
+            height: 50px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            background: linear-gradient(0deg, rgb(32, 32, 32) 0%, rgba(32, 32, 32, 0.7) 70%,  rgba(32, 32, 32, 0.20) 100%);;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+
+
+            p {
+                text-align: right;
+                text-decoration: underline;
+                margin-right: 10px;
+                cursor: pointer;
+                padding: 0 0 5px 15px;
+            }
+        }
+
+
+        &>p {
+            margin: 0.3em;
+        }
+    }
+
+    /*
+        A list for rendering skills.
+    */
+
+    .skillSet {
+        padding: 1.4em 0;
+
+        h2 {
+            padding: 0.5em 0;
+        }
+
+        p {
+            padding: 0.5em 0;
+        }
+    }
+}
+
+
+
+@media (min-width: 600px) {
+    .projectContainer {
+        flex-direction: row;
+        max-width: 500px;
+        width: 500px;
+    }
+
+
+    .imageHolder {
+        width: 40%;
+    }
+
+
+    .projectImage {
+        height: 100%;
+        width: 100%;
+        background-position: center;
+    }
+
+
+    .projectDescription {
+        width: 60%;
+
+        &>p {
+            margin-left: 10px;
+        }
+    }
+}
+
+
+@media (min-width: 900px) {
+    .projectContainer {
+        margin: 2em 0;
+    }
+
+
+    .firstDiv {
+        margin: 2em calc(50% - 100px) 2em calc(50% - 400px);
+    }
+
+
+    .secondDiv {
+        margin: 2em auto;
+    }
+
+  
+    .thirdDiv {
+        margin: 2em calc(50% - 400px) 2em calc(50% - 100px);
     }
 }

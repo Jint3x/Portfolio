@@ -129,99 +129,6 @@ $textColor: global.$textColor;
     }
 
 
-    .projectContainer {
-        display: flex;
-        flex-direction: column;
-        color: $textColor;
-        width: 80%;
-        max-width: 280px;
-        margin: 2em auto;
-        border-radius: 12px;
-        overflow: hidden;
-    }
-
-
-    .imageHolder {
-        overflow: hidden;
-        position: relative;
-
-        &:hover .projectImage {
-            transform: scale(1.1);
-        }
-    }
-
-
-    .projectImage {
-        background-color: rgba(255, 255, 255, 0.479);
-        height: 120px;
-        background-repeat: no-repeat;
-        background-size: cover;
-        transition: transform 0.5s;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-
-    .projectView {
-        background: linear-gradient(180deg, #222222 0%, rgb(124, 124, 124) 50%, #222121 100%);
-        width: 100px;
-        display: flex;
-        border-radius: 10px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        p {
-            margin: 0 auto;
-
-            a {
-                font-size: 0.9em;
-            }
-
-
-            img {
-                height: 25px;
-                width: 25px !important;
-            }
-        }
-    }
-
-
-    .projectDescription {
-        position: relative;
-        height: 150px;
-        overflow: hidden;
-        background: rgb(32, 32, 32);
-
-        &>div {
-            height: 50px;
-            width: 100%;
-            position: absolute;
-            bottom: 0;
-            background: linear-gradient(0deg, rgb(32, 32, 32) 0%, rgba(32, 32, 32, 0.7) 70%,  rgba(32, 32, 32, 0.20) 100%);;
-            display: flex;
-            align-items: flex-end;
-            justify-content: flex-end;
-
-
-            p {
-                text-align: right;
-                text-decoration: underline;
-                margin-right: 10px;
-                cursor: pointer;
-                padding: 0 0 5px 15px;
-            }
-        }
-
-
-        &>p {
-            margin: 0.3em;
-        }
-    }
-
     /*
         The thrid part of the webpage, shows a list of my current skills.
     */
@@ -229,19 +136,6 @@ $textColor: global.$textColor;
     #skills {
         width: 80%;
         margin: 0 auto;
-    }
-
-
-    .skillSet {
-        padding: 1.4em 0;
-
-        h2 {
-            padding: 0.5em 0;
-        }
-
-        p {
-            padding: 0.5em 0;
-        }
     }
 }
 
@@ -255,6 +149,7 @@ $textColor: global.$textColor;
 
 @media (min-width: 600px) {
     $fontSize: 1.2em;
+
 
     #mainWebsiteEntry {
         padding: 2em 0;
@@ -272,6 +167,7 @@ $textColor: global.$textColor;
         }
     }
 
+    
     #websiteEntrySecond {
         display: flex;
         flex-direction: column;
@@ -287,59 +183,11 @@ $textColor: global.$textColor;
             }
         }
     }
-
- 
-    .projectContainer {
-        flex-direction: row;
-        max-width: 500px;
-        width: 500px;
-    }
-
-
-    .imageHolder {
-        width: 40%;
-    }
-
-
-    .projectImage {
-        height: 100%;
-        width: 100%;
-        background-position: center;
-    }
-
-
-    .projectDescription {
-        width: 60%;
-
-        &>p {
-            margin-left: 10px;
-        }
-    }
 }
 
 @media (min-width: 900px) {
     #projectsHolder {
         padding: 5em 0;
-    }
-
-
-    .projectContainer {
-        margin: 2em 0;
-    }
-
-
-    .firstDiv {
-        margin: 2em calc(50% - 100px) 2em calc(50% - 400px);
-    }
-
-
-    .secondDiv {
-        margin: 2em auto;
-    }
-
-  
-    .thirdDiv {
-        margin: 2em calc(50% - 400px) 2em calc(50% - 100px);
     }
 
 

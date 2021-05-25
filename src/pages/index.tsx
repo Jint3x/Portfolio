@@ -2,7 +2,7 @@ import React, { useRef } from "react"
 import "../styles/global.scss"
 import * as style from "../styles/pages/index.module.scss"
 
-import { IconedParagraph, YellowLineHeader } from "../components/reusable"
+import { IconedParagraph, YellowLineHeader, Project, SkillList } from "../components/reusable"
 import Animate from "react-animate-on-scroll"
 
 function Homepage() {
@@ -151,77 +151,6 @@ function Projects() {
 }
 
 
-/**
- * Information for each project I've worked on. Each project can be clicked and 
- * redirected to its website. You can also read more on that project.
- */
-interface Project_I {
-    description: string,
-    readMore: string,
-    projectImage: string,
-    projectUrl: string
-    moveToTheRight: number,
-}
-
-function Project(props: Project_I) {
-    // Will be used on an anchor element. It will be programatically clicked 
-    // when someone clicks on the project image.
-    const urlRef: any = useRef(null);
-
-    // Depending on which number is passed, the project will be assigned to a div that will 
-    // move it on the webpage.
-    let moveableObject = [style.firstDiv, style.secondDiv, style.thirdDiv][props.moveToTheRight];
-
-    return (
-        <Animate
-         animateIn={"fadeInLeft"}
-         offset={150}
-         animateOnce={true}
-        >
-            <div className={`${style.projectContainer} ${moveableObject}`}>
-                <div className={style.imageHolder}>
-                    {
-                    /* This anchor element will be invisible and will be programatically 
-                    clicked when someone clicks on the project image below. */
-                    }
-                    <a 
-                    href={props.projectUrl}
-                    ref={urlRef}
-                    target={"_blank"}
-                    />
-
-                    <div 
-                    style={{backgroundImage: `url(${props.projectImage})`}} 
-                    className={style.projectImage}
-                    onClick={() => urlRef.current.click() }
-                    />
-
-                    <div className={style.projectView}>
-                        <IconedParagraph 
-                        href={props.projectUrl}
-                        isMain={true}
-                        openNewTab={true}
-                        alt={"View Icon"}
-                        src={"/project_homepage.png"}
-                        text={"View"}
-                        />
-                    </div>
-                </div>
-
-                <div className={style.projectDescription}>
-                    <div>
-                        <p>Read More</p>
-                    </div>
-                    <p>
-                        {props.description}
-                    </p>
-                </div>
-            </div>
-        </Animate>
-    )
-}
-
-
 function Skills() {
     return (
         <section>
@@ -265,49 +194,6 @@ function Skills() {
         </section>
     )
 }
-
-
-
-interface SkillList_I {
-    header: string,
-    skills: Skill_I[]
-}
-
-
-interface Skill_I {
-    icon_alt: string,
-    image: string,
-    skill: string,
-}
-
-
-function SkillList(props: SkillList_I) {
-    let listOfSkills = props.skills.map(skill => {
-        return (
-            <IconedParagraph 
-            src={skill.image}
-            alt={skill.icon_alt}
-            text={skill.skill}
-            />
-        )
-    })
-
-    return (
-        <Animate
-         animateIn={"fadeInLeft"}
-         offset={150}
-         animateOnce={true}
-        >
-        <div className={style.skillSet}>
-            <h2>
-                {props.header}
-            </h2>
-            {listOfSkills}
-        </div>
-        </Animate>
-    )
-}
-
 
 
 
