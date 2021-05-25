@@ -196,6 +196,12 @@ $textColor: global.$textColor;
         }
     }
 
+
+    #navigation>nav>a {
+        font-size: $fontSize - 0.1rem;
+    }
+
+
     .aboutMeParagraph {
         width: 80%;
         margin: 0 auto;

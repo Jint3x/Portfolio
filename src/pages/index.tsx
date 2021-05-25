@@ -104,7 +104,7 @@ function Navigation() {
 
 function Projects() {
     return (
-        <section>
+        <section id={"projects"}>
         <div id={style.projectsHolder}>
             <div className={style.headerPadding}>
                 <YellowLineHeader text={"Planned & Finished Projects"} />
@@ -153,7 +153,7 @@ function Projects() {
 
 function Skills() {
     return (
-        <section>
+        <section id={"skills"}>
         <div id={style.skillList}>
             <div className={style.headerPadding}>
                 <YellowLineHeader text={"Programming Skills"} />
@@ -198,7 +198,7 @@ function Skills() {
 
 function About() {
     return (
-        <section>
+        <section id={"about"}>
         <div id={style.aboutContainer}>
             <div className={style.headerPadding}>
                 <YellowLineHeader text={"About me"} />

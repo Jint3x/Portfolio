@@ -123,7 +123,10 @@ function Project(props: Project_I) {
                     onClick={() => urlRef.current.click() }
                     />
 
-                    <div className={style.projectView}>
+                    <div 
+                     className={style.projectView}
+                     onClick={() => urlRef.current.click() }
+                    >
                         <IconedParagraph 
                         href={props.projectUrl}
                         isMain={true}

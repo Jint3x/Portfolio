@@ -1,6 +1,11 @@
 @use "./_global.scss";
 
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 * {
     margin: 0;
     box-sizing: content-box;
