@@ -190,4 +190,22 @@ function SkillList(props: SkillList_I) {
 }
 
 
-export { IconedParagraph, YellowLineHeader, Project, SkillList }
+interface AboutParagraph_I {
+    text: string
+}
+
+function AboutParagraph(props: AboutParagraph_I) {
+    return (
+        <Animate
+        offset={100}
+        animateOnce={true}
+        animateIn={"fadeInLeft"}
+        >
+            <p className={style.aboutMeParagraph}>
+                {props.text}
+            </p>
+        </Animate>
+    )
+}
+
+export { IconedParagraph, YellowLineHeader, Project, SkillList, AboutParagraph }

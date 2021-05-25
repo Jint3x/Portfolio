@@ -1,6 +1,6 @@
 import React from "react"
 import { screen, render } from "@testing-library/react"
-import { IconedParagraph, YellowLineHeader, SkillList, Project } from "../../../src/components/reusable"
+import { IconedParagraph, YellowLineHeader, SkillList, Project, AboutParagraph } from "../../../src/components/reusable"
 
 
 test("Renders the correct image data and span element", () => {
@@ -148,4 +148,17 @@ test("Renders a skill list with the correct paragraphs (icon url)", () => {
 
     expect(skillReactIcon.parentElement.nodeName).toBe("P");
     expect(skillMongoDBIcon.parentElement.nodeName).toBe("P");
+})
+
+
+test("Renders an about me paragraph", () => {
+    render(
+        <AboutParagraph 
+         text={"A very special text. You can't find anything else like it!"}
+        />
+    )
+
+    let aboutMe = screen.getByText("A very special text. You can't find anything else like it!");
+
+    expect(aboutMe.nodeName).toBe("P")
 })

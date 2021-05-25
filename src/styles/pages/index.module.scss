@@ -15,7 +15,7 @@ $textColor: global.$textColor;
 
 
     /*
-        The first part of the webpage, shows contact info and portfolio image
+        Contact Info & Image Section
     */
     
     #frontView {
@@ -119,7 +119,7 @@ $textColor: global.$textColor;
 
 
     /*
-        The second part of the webpage, shows planned & finished projects
+        Finished & Planned Projects Section
     */
 
     #projectsHolder {
@@ -130,12 +130,23 @@ $textColor: global.$textColor;
 
 
     /*
-        The thrid part of the webpage, shows a list of my current skills.
+        Programming Skills Section
     */
 
     #skills {
         width: 80%;
         margin: 0 auto;
+    }
+
+
+    /*
+        About Section
+    */
+
+    #aboutContainer {
+        margin: 0 auto;
+
+        
     }
 }
 
@@ -148,7 +159,8 @@ $textColor: global.$textColor;
 
 
 @media (min-width: 600px) {
-    $fontSize: 1.2em;
+    $fontSize: 1.2rem;
+    $lineHeight: 1.7rem;
 
 
     #mainWebsiteEntry {
@@ -183,6 +195,12 @@ $textColor: global.$textColor;
             }
         }
     }
+
+    .aboutMeParagraph {
+        width: 80%;
+        margin: 0 auto;
+        line-height: $lineHeight;
+    }
 }
 
 @media (min-width: 900px) {
@@ -210,5 +228,11 @@ $textColor: global.$textColor;
     
     #rightSidedSkills {
         width: 50%;
+    }
+
+
+    #aboutContainer {
+        max-width: 1200px;
+        width: 100%;
     }
 }

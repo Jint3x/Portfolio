@@ -11,6 +11,7 @@ $textColor: global.$textColor;
 @media (min-width: 0px) {
     $fontSize: 1rem;
     $fontSizeHeader: 1.8rem;
+    $lineHeight: 1.5rem;
 
 
     /*
@@ -184,6 +185,18 @@ $textColor: global.$textColor;
             padding: 0.5em 0;
         }
     }
+
+
+    /*
+        A paragraph with information
+    */
+    
+    .aboutMeParagraph {
+        width: 80%;
+        margin: 0 auto;
+        padding: 1em 0;
+        line-height: $lineHeight;
+    }
 }
 
 
@@ -236,5 +249,11 @@ $textColor: global.$textColor;
   
     .thirdDiv {
         margin: 2em calc(50% - 400px) 2em calc(50% - 100px);
+    }
+
+
+    .aboutMeParagraph {
+        margin-left: 10%;
+        width: 50%;
     }
 }

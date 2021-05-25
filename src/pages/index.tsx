@@ -2,7 +2,7 @@ import React, { useRef } from "react"
 import "../styles/global.scss"
 import * as style from "../styles/pages/index.module.scss"
 
-import { IconedParagraph, YellowLineHeader, Project, SkillList } from "../components/reusable"
+import { IconedParagraph, YellowLineHeader, Project, SkillList, AboutParagraph } from "../components/reusable"
 import Animate from "react-animate-on-scroll"
 
 function Homepage() {
@@ -196,12 +196,37 @@ function Skills() {
 }
 
 
-
-
-
 function About() {
-    return null
+    return (
+        <section>
+        <div id={style.aboutContainer}>
+            <div className={style.headerPadding}>
+                <YellowLineHeader text={"About me"} />
+            </div>
+
+            <AboutParagraph  
+             text={
+                 `
+                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe autem delectus, excepturi tenetur
+                 quibusdam necessitatibus deserunt beatae. Ex quasi reiciendis harum voluptatem ducimus asperiores, laudantium ratione perspiciatis ipsa corporis voluptate?
+                 `
+                }
+            />
+ 
+            <AboutParagraph 
+             text={
+                 `
+                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe autem delectus, excepturi tenetur
+                 quibusdam necessitatibus deserunt beatae. Ex quasi reiciendis harum voluptatem ducimus asperiores, laudantium ratione perspiciatis ipsa corporis voluptate?
+                 `
+             }
+            />
+        </div>
+        </section>
+    )
 }
+
+
 
 
 
