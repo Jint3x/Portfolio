@@ -1,4 +1,5 @@
-import React, { useRef } from "react"
+import React, { useEffect, useRef, useState } from "react"
+import * as ReactDOM from "react-dom"
 import * as style from "../styles/components/reusable.module.scss"
 
 import Animate from "react-animate-on-scroll"
@@ -137,17 +138,86 @@ function Project(props: Project_I) {
                         />
                     </div>
                 </div>
+                <ProjectDescription description={props.description} />
+            </div>
+        </Animate>
+    )
+}
 
-                <div className={style.projectDescription}>
+
+interface ProjectDescription_I {
+    description: string,
+}
+
+function ProjectDescription(props: ProjectDescription_I) {
+    const [readMore, setReadMore] = useState(false);
+
+    return (
+        <div className={style.projectDescription}>
                     <div>
-                        <p>Read More</p>
+                        <p onClick={() => setReadMore(true) }>Read More</p>
+                        { readMore && <ReactPortal activeProject={setReadMore} /> }
                     </div>
                     <p>
                         {props.description}
                     </p>
-                </div>
+        </div>
+    )
+}
+
+
+function ReactPortal(props: ProjectInfo_I) {
+    let [shouldRender, setShouldRender] = useState(false);
+
+    useEffect(() => {
+        setShouldRender(true);
+    })
+
+    if (shouldRender) {
+        return ReactDOM.createPortal(
+            <ProjectInfo {...props} />,
+            document.getElementsByTagName("body")[0] as HTMLElement
+        )
+    } else {
+        return null;
+    }
+}
+
+
+interface ProjectInfo_I {
+    activeProject: React.Dispatch<React.SetStateAction<boolean>>,
+}
+
+function ProjectInfo(props: ProjectInfo_I) {
+    return (
+        <div className={style.projectModal}>
+            <div 
+             className={style.projectModalSideBackground}
+             onClick={() => props.activeProject(false)}
+            >  
             </div>
-        </Animate>
+
+            <div className={style.projectModalData}>
+                <img 
+                 src={"/projects/leave_project.png"} 
+                 alt={"Close Project"}
+                 onClick={() => props.activeProject(false)}
+                />
+                <h1>Project: Fallen SMP</h1>
+                <hr />
+                
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ad nostrum quod aut sapiente fuga beatae quam, magnam necessitatibus sunt totam ipsa fugit debitis officiis ipsum dolorem eveniet autem porro?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ad nostrum quod aut sapiente fuga beatae quam, magnam necessitatibus sunt totam ipsa fugit debitis officiis ipsum dolorem eveniet autem porro?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ad nostrum quod aut sapiente fuga beatae quam, magnam necessitatibus sunt totam ipsa fugit debitis officiis ipsum dolorem eveniet autem porro?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ad nostrum quod aut sapiente fuga beatae quam, magnam necessitatibus sunt totam ipsa fugit debitis officiis ipsum dolorem eveniet autem porro?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ad nostrum quod aut sapiente fuga beatae quam, magnam necessitatibus sunt totam ipsa fugit debitis officiis ipsum dolorem eveniet autem porro?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ad nostrum quod aut sapiente fuga beatae quam, magnam necessitatibus sunt totam ipsa fugit debitis officiis ipsum dolorem eveniet autem porro?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ad nostrum quod aut sapiente fuga beatae quam, magnam necessitatibus sunt totam ipsa fugit debitis officiis ipsum dolorem eveniet autem porro?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ad nostrum quod aut sapiente fuga beatae quam, magnam necessitatibus sunt totam ipsa fugit debitis officiis ipsum dolorem eveniet autem porro?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ad nostrum quod aut sapiente fuga beatae quam, magnam necessitatibus sunt totam ipsa fugit debitis officiis ipsum dolorem eveniet autem porro?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ad nostrum quod aut sapiente fuga beatae quam, magnam necessitatibus sunt totam ipsa fugit debitis officiis ipsum dolorem eveniet autem porro?</p>
+            </div>
+        </div>
     )
 }
 

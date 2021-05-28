@@ -185,6 +185,66 @@ $textColor: global.$textColor;
         }
     }
 
+
+    .projectModal {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .projectModalSideBackground {
+        z-index: 5;
+        height: 100%;
+        width: 100%;
+        background-color: #2323239a;
+    }
+
+    .projectModalData {
+        position: fixed;
+        z-index: 10;
+        background-color: #000000;
+        border-radius: 5px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 60%;
+        width: 80%;
+        color: $textColor;
+        overflow: auto;
+        animation: fadeIn 1s;
+
+        img {
+            height: 20px;
+            display: block;
+            margin: 0.2rem 0.2rem 0 auto;
+            cursor: pointer;
+        }
+
+        h1 {
+            font-size: $fontSizeHeader;
+            text-align: center;
+            width: 80%;
+            margin: 0.3rem auto 0 auto;
+        }
+
+        hr {
+            height: 4px;
+            background-color: $yellowLineColor;
+            border: none;
+            width: 60%;
+            max-width: 160px;
+            margin: 0 auto 1.4rem auto;
+        }
+
+        p {
+            font-size: $fontSize;
+            width: 80%;
+            margin: 1.5em auto;
+            line-height: $lineHeight;
+        }
+    }
+
     /*
         A list for rendering skills.
     */
@@ -217,6 +277,8 @@ $textColor: global.$textColor;
 
 
 @media (min-width: 600px) {
+    $lineHeight: 1.7rem;
+
     .projectContainer {
         flex-direction: row;
         max-width: 500px;
@@ -243,6 +305,22 @@ $textColor: global.$textColor;
             margin-left: 10px;
         }
     }
+
+
+    .projectModalData {
+        p {
+            line-height: $lineHeight;
+        }
+    }
+}
+
+
+@media (min-width: 800px) {
+    .projectModalData {
+        p {
+            width: 70%;
+        }
+    }
 }
 
 
@@ -267,8 +345,20 @@ $textColor: global.$textColor;
     }
 
 
+    p {
+        max-width: 650px;
+    }
+
+
     .aboutMeParagraph {
         margin-left: 10%;
         width: 50%;
     }
+}
+
+
+
+@keyframes fadeIn {
+    0% { opacity: 0; top: 40%; }
+    100% { opacity: 1; top: 50%; }
 }
