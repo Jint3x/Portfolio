@@ -109,7 +109,6 @@ function Projects() {
             <div className={style.headerPadding}>
                 <YellowLineHeader text={"Planned & Finished Projects"} />
             </div>
-
             <Project 
              description={
                 `This is a medium-sized description to apply the styles. Now I need to write even more text.
@@ -233,5 +232,5 @@ function About() {
 
 
 
-export { FrontView, Project, SkillList, About }
+export { FrontView, Projects, Skills, About }
 export default Homepage

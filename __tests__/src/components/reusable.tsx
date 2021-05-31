@@ -47,7 +47,6 @@ test("Renders the correct text", () => {
     render(<YellowLineHeader text={"Hello world!"} />)
 
     expect(screen.getByText("Hello world!").nodeName).toBe("H1");
-    
 })
 
 
@@ -87,8 +86,23 @@ test("Renders a project and checks its text", () => {
 })
 
 
-// Not implemented yet
-test("Renders a project and reads more about it", () => null)
+// test("Renders a project and reads more about it", () => {
+//     render(
+//     <Project 
+//      description={"A special project"}
+//      readMore={"Even More Information"}
+//      projectImage={"asd"}
+//      projectUrl={"asd"}
+//      moveToTheRight={1}
+//     />,
+//     {container: document.body})
+
+//     let item = screen.getByText("Read More");
+//     console.log(item);
+//     item.click();
+
+//     screen.debug()
+// })
 
 
 test("Renders a skill list with the correct heading", () => {

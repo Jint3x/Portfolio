@@ -1,4 +1,4 @@
-import { FrontView } from "../../../src/pages/index"
+import { FrontView, Projects, Skills } from "../../../src/pages/index"
 import { screen, render } from "@testing-library/react"
 import React from "react"
 
@@ -36,3 +36,23 @@ test("Renders the FrontView and checks the navigation links", () => {
 })
 
 
+test("Renders the list of projects", () => {
+    const { container } = render(<Projects />);
+
+    let header = screen.getByText("Planned & Finished Projects");
+    let section = container.querySelector("#projects");
+    
+    expect(header.nodeName).toBe("H1");
+    expect(section.nodeName).toBe("SECTION");
+})
+
+
+test("Renders the list of skills", () => {
+    const { container } = render(<Skills />);
+
+    let header = screen.getByText("Programming Skills");
+    let subHeaders = container.querySelectorAll("h2");
+
+    expect(header.nodeName).toBe("H1");
+    expect(subHeaders.length).toBe(3);
+})
