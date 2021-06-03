@@ -68,7 +68,7 @@ function WebsiteEntry() {
                  alt={"A portfolio image"}
                 />
                 <h2>Jint3x</h2>
-                <p>- Software/Web Developer</p>
+                <p>- A Software/Web Developer</p>
             </div>
             <div id={style.websiteEntrySecond}>
                 <h2>Get in touch!</h2>
