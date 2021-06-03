@@ -3,11 +3,31 @@ import "../styles/global.scss"
 import * as style from "../styles/pages/index.module.scss"
 
 import { IconedParagraph, YellowLineHeader, Project, SkillList, AboutParagraph } from "../components/reusable"
+import { Helmet } from "react-helmet"
 import Animate from "react-animate-on-scroll"
 
 function Homepage() {
     return (
         <div id={style.bodyHolder}>
+            <Helmet
+                bodyAttributes={{lang: "en"}}
+            >
+                <title>Jint3x Portfolio</title>
+                <meta charSet={"utf-8"} />
+                <meta name={"description"} content={"Jint3x's personal portfolio! Here you can find information about me, the projects I've worked on, the technologies I can use and how to contact me."} />
+                <meta name={"keywords"} content={"Developer, Jint3x, Dev Jint3x, Portfolio, Programming"} />
+            
+                <meta property={"og:title"} content={"Jint3x Portfolio"} />
+                <meta property={"og:url"} content={"FILL"} />
+                <meta property={"og:sitename"} content={"Jint3x Portfolio"} />
+                <meta property={"og:type"} content={"website"} />
+                <meta property={"og:description"} content={"Jint3x's personal portfolio! Here you can find information about me, the projects I've worked on, the technologies I can use and how to contact me."} />
+            
+                <meta property={"twitter:title"} content={"Jint3x Portfolio"} />
+                <meta property={"twitter:description"} content={"Jint3x's personal portfolio! Here you can find information about me, the projects I've worked on, the technologies I can use and how to contact me."} />
+                <meta property={"twitter:card"} content={"summary"} />
+                <meta property={"twitter:creator"} content={"@Jint3x"} />
+            </Helmet>
             <FrontView />
             <div id={style.darkBackground}>
                 <Projects />
