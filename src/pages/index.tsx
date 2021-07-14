@@ -94,8 +94,7 @@ function WebsiteEntry() {
                 <IconedParagraph 
                  src={"/icons/gmail.png"}
                  alt={"Gmail Icon"}
-                 text={"devaccount@gmail.com"}
-                 href={""}
+                 text={"devjint3x@gmail.com"}
                  isMain={true}
                 />
             </div>
@@ -130,10 +129,12 @@ function Projects() {
                 <YellowLineHeader text={"Planned & Finished Projects"} />
             </div>
             <Project 
+             title={"Portfolio"}
              description={
-                `This is a medium-sized description to apply the styles. Now I need to write even more text.
-                I wonder what I can write about, doesn't really matter. I need even more text.... Ok, this is
-                too much text.... Let's write a litte bit more.`
+                `This is the project you are currently on! It was a small one, but interesting. I really wondered if I should use 
+                light or dark mode, but I decided to go with dark one. The website is built with React (Gatsby). Most of the webpage 
+                has also been tested with Jest and testing-library. For styling, SCSS was used as a preprocessor. More about this website 
+                can be found on my github profile, which contains all the website codes.`
              }
              readMore={"Test"}
              projectImage={"/projects/fallen.png"}
@@ -142,10 +143,13 @@ function Projects() {
             />
 
             <Project 
+             title={"Fallen SMP"}
              description={
-                `This is a medium-sized description to apply the styles. Now I need to write even more text.
-                I wonder what I can write about, doesn't really matter. I need even more text.... Ok, this is
-                too much text.... Let's write a litte bit more.`
+                `This was my first project which launched into production. In fact, I'm still managing that website and publish updates 
+                sometimes. There was actually a new update just a while ago! On the surface, it might look quite simple with few pages, 
+                however, that website has an application system for its community integrated into it! Unfortunately I can't really go in
+                details as to what is used in the project, since its source code is not publicly available (and won't be). However, I've 
+                gained a lot of experience from it.`
              }
              readMore={"Test"}
              projectImage={"/projects/fallen.png"}
@@ -154,10 +158,12 @@ function Projects() {
             />
 
             <Project 
+             title={"Jint3x's Blogs"}
              description={
-                `This is a medium-sized description to apply the styles. Now I need to write even more text.
-                I wonder what I can write about, doesn't really matter. I need even more text.... Ok, this is
-                too much text.... Let's write a litte bit more.`
+                `This is an upcoming project, it will be my own blog website! I plan on posting different topics about programming and computers 
+                in general. I can't say when it will be released, but the progress is publicly availabe on my github profile. I've already began 
+                researching different things that I will talk about in it. The technologies which will be used are Typescript for a language, Tailwindcss
+                and SCSS for styling, Cypress and Jest + testing-library/react for testing, React (Nextjs) as frontend. `
              }
              readMore={"Test"}
              projectImage={"/projects/fallen.png"}
@@ -226,18 +232,20 @@ function About() {
             <AboutParagraph  
              text={
                  `
-                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe autem delectus, excepturi tenetur
-                 quibusdam necessitatibus deserunt beatae. Ex quasi reiciendis harum voluptatem ducimus asperiores, laudantium ratione perspiciatis ipsa corporis voluptate?
+                 I'm a self taught software/web developer located in Bulgaria. I've been coding for year and a half now. I've had experience with quite 
+                 a lot of technologies, such as: HTML, CSS, Javascript, Typescript, React, Rust, Python (a very little bit). I've also worked
+                 with databases such as MongoDB and PostgreSQL.
                  `
                 }
             />
  
             <AboutParagraph 
              text={
-                 `
-                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe autem delectus, excepturi tenetur
-                 quibusdam necessitatibus deserunt beatae. Ex quasi reiciendis harum voluptatem ducimus asperiores, laudantium ratione perspiciatis ipsa corporis voluptate?
-                 `
+                `
+                 I have quite a lot of passion for working with computers and technology over all. It is amazing! I spend most of my free time coding 
+                 or researching different topics about computers (in fact, my blog website will have some of these topics once it is published!). I do 
+                 plan on enrolling in a university for a CS degree and learning CE and SE on my own. 
+                `
              }
             />
         </div>

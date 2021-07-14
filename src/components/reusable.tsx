@@ -84,6 +84,7 @@ function YellowLineHeader(props: YellowLineHeader_I) {
  * redirected to its website. You can also read more on that project.
  */
  interface Project_I {
+    title: string,
     description: string,
     readMore: string,
     projectImage: string,
@@ -138,7 +139,7 @@ function Project(props: Project_I) {
                         />
                     </div>
                 </div>
-                <ProjectDescription description={props.description} />
+                <ProjectDescription title={props.title} description={props.description} />
             </div>
         </Animate>
     )
@@ -146,6 +147,7 @@ function Project(props: Project_I) {
 
 
 interface ProjectDescription_I {
+    title: string,
     description: string,
 }
 
@@ -156,7 +158,7 @@ function ProjectDescription(props: ProjectDescription_I) {
         <div className={style.projectDescription}>
                     <div>
                         <p onClick={() => setReadMore(true) }>Read More</p>
-                        { readMore && <ReactPortal activeProject={setReadMore} /> }
+                        { readMore && <ReactPortal title={props.title} text={props.description}  activeProject={setReadMore} /> }
                     </div>
                     <p>
                         {props.description}
@@ -186,6 +188,8 @@ function ReactPortal(props: ProjectInfo_I) {
 
 interface ProjectInfo_I {
     activeProject: React.Dispatch<React.SetStateAction<boolean>>,
+    text: string,
+    title: string,
 }
 
 function ProjectInfo(props: ProjectInfo_I) {
@@ -203,19 +207,10 @@ function ProjectInfo(props: ProjectInfo_I) {
                  alt={"Close Project"}
                  onClick={() => props.activeProject(false)}
                 />
-                <h1>Project: Fallen SMP</h1>
+                <h1>Project: {props.title}</h1>
                 <hr />
                 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ad nostrum quod aut sapiente fuga beatae quam, magnam necessitatibus sunt totam ipsa fugit debitis officiis ipsum dolorem eveniet autem porro?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ad nostrum quod aut sapiente fuga beatae quam, magnam necessitatibus sunt totam ipsa fugit debitis officiis ipsum dolorem eveniet autem porro?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ad nostrum quod aut sapiente fuga beatae quam, magnam necessitatibus sunt totam ipsa fugit debitis officiis ipsum dolorem eveniet autem porro?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ad nostrum quod aut sapiente fuga beatae quam, magnam necessitatibus sunt totam ipsa fugit debitis officiis ipsum dolorem eveniet autem porro?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ad nostrum quod aut sapiente fuga beatae quam, magnam necessitatibus sunt totam ipsa fugit debitis officiis ipsum dolorem eveniet autem porro?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ad nostrum quod aut sapiente fuga beatae quam, magnam necessitatibus sunt totam ipsa fugit debitis officiis ipsum dolorem eveniet autem porro?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ad nostrum quod aut sapiente fuga beatae quam, magnam necessitatibus sunt totam ipsa fugit debitis officiis ipsum dolorem eveniet autem porro?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ad nostrum quod aut sapiente fuga beatae quam, magnam necessitatibus sunt totam ipsa fugit debitis officiis ipsum dolorem eveniet autem porro?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ad nostrum quod aut sapiente fuga beatae quam, magnam necessitatibus sunt totam ipsa fugit debitis officiis ipsum dolorem eveniet autem porro?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ad nostrum quod aut sapiente fuga beatae quam, magnam necessitatibus sunt totam ipsa fugit debitis officiis ipsum dolorem eveniet autem porro?</p>
+                <p>{props.text}</p>
             </div>
         </div>
     )
