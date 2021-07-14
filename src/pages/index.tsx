@@ -17,12 +17,13 @@ function Homepage() {
                 <meta name={"description"} content={"Jint3x's personal portfolio! Here you can find information about me, the projects I've worked on, the technologies I can use and how to contact me."} />
                 <meta name={"keywords"} content={"Developer, Jint3x, Dev Jint3x, Portfolio, Programming"} />
             
-                <meta property={"og:title"} content={"Jint3x Portfolio"} />
-                <meta property={"og:url"} content={"FILL"} />
+                <meta property={"og:title"} content={"Jint3x's Portfolio"} />
+                <meta property={"og:url"} content={"https://jint3x.dev"} />
+                <meta property={"og:image"} content={"https://jint3x.dev/profile_image.png"} />
                 <meta property={"og:sitename"} content={"Jint3x Portfolio"} />
                 <meta property={"og:type"} content={"website"} />
                 <meta property={"og:description"} content={"Jint3x's personal portfolio! Here you can find information about me, the projects I've worked on, the technologies I can use and how to contact me."} />
-            
+
                 <meta property={"twitter:title"} content={"Jint3x Portfolio"} />
                 <meta property={"twitter:description"} content={"Jint3x's personal portfolio! Here you can find information about me, the projects I've worked on, the technologies I can use and how to contact me."} />
                 <meta property={"twitter:card"} content={"summary"} />
@@ -72,12 +73,12 @@ function WebsiteEntry() {
             </div>
             <div id={style.websiteEntrySecond}>
                 <h2>Get in touch!</h2>
-                
+
                 <IconedParagraph 
-                 src={"/icons/github.png"}
-                 alt={"Github Icon"}
-                 text={"github.com/Jint3x"}
-                 href={"https://github.com/Jint3x"}
+                 src={"/icons/linkedin.png"}
+                 alt={"Linkedin Icon"}
+                 text={"linkedin.com/in/jint3x"}
+                 href={"https://www.linkedin.com/in/jint3x/"}
                  isMain={true}
                  openNewTab={true}
                 />
@@ -87,6 +88,15 @@ function WebsiteEntry() {
                  alt={"Twitter Icon"}
                  text={"twitter.com/Jint3x"}
                  href={"https://twitter.com/Jint3x"}
+                 isMain={true}
+                 openNewTab={true}
+                />
+                
+                <IconedParagraph 
+                 src={"/icons/github.png"}
+                 alt={"Github Icon"}
+                 text={"github.com/Jint3x"}
+                 href={"https://github.com/Jint3x"}
                  isMain={true}
                  openNewTab={true}
                 />
@@ -136,9 +146,8 @@ function Projects() {
                 has also been tested with Jest and testing-library. For styling, SCSS was used as a preprocessor. More about this website 
                 can be found on my github profile, which contains all the website codes.`
              }
-             readMore={"Test"}
-             projectImage={"/projects/fallen.png"}
-             projectUrl={"https://fallensmp.com"}
+             projectImage={"/projects/portfolio.png"}
+             projectUrl={"https://jint3x.dev"}
              moveToTheRight={0}
             />
 
@@ -151,7 +160,6 @@ function Projects() {
                 details as to what is used in the project, since its source code is not publicly available (and won't be). However, I've 
                 gained a lot of experience from it.`
              }
-             readMore={"Test"}
              projectImage={"/projects/fallen.png"}
              projectUrl={"https://fallensmp.com"}
              moveToTheRight={1}
@@ -165,9 +173,8 @@ function Projects() {
                 researching different things that I will talk about in it. The technologies which will be used are Typescript for a language, Tailwindcss
                 and SCSS for styling, Cypress and Jest + testing-library/react for testing, React (Nextjs) as frontend. `
              }
-             readMore={"Test"}
-             projectImage={"/projects/fallen.png"}
-             projectUrl={"https://fallensmp.com"}
+             projectImage={"/projects/blog.png"}
+             projectUrl={"https://blog.jint3x.dev"}
              moveToTheRight={2}
             />
         </div>
@@ -232,8 +239,8 @@ function About() {
             <AboutParagraph  
              text={
                  `
-                 I'm a self taught software/web developer located in Bulgaria. I've been coding for year and a half now. I've had experience with quite 
-                 a lot of technologies, such as: HTML, CSS, Javascript, Typescript, React, Rust, Python (a very little bit). I've also worked
+                 I'm a self taught software/web developer located in Bulgaria, Varna. I've been coding for over a year and a half now. I've had experience with quite 
+                 a lot of technologies, such as: HTML, CSS, Javascript, Typescript, React, Rust, Python (a very little bit), Git. I've also worked
                  with databases such as MongoDB and PostgreSQL.
                  `
                 }
@@ -245,6 +252,17 @@ function About() {
                  I have quite a lot of passion for working with computers and technology over all. It is amazing! I spend most of my free time coding 
                  or researching different topics about computers (in fact, my blog website will have some of these topics once it is published!). I do 
                  plan on enrolling in a university for a CS degree and learning CE and SE on my own. 
+                `
+             }
+            />
+
+            <AboutParagraph 
+             text={
+                `
+                 I hope that sometime in the future, I can gather enough experience and knowledge to be able to build my own programming community/academy 
+                 which will be focused on teaching the fundamentals of the digital world instead of simply showing how the newest shiny library works. It's a 
+                 long road ahead, but I'm fully willing to walk it. I always enjoy learning new things about computers, regardless of what they are about. All 
+                 technologies have their uniqueness and uses. Just like a tool in the tool-shed, use what is most appropriate.
                 `
              }
             />

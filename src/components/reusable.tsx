@@ -86,7 +86,6 @@ function YellowLineHeader(props: YellowLineHeader_I) {
  interface Project_I {
     title: string,
     description: string,
-    readMore: string,
     projectImage: string,
     projectUrl: string
     moveToTheRight: number,

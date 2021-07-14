@@ -26,6 +26,10 @@ $textColor: global.$textColor;
 
     #websiteEntryFirst {
         padding: 2em 0;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
 
         img {
             width: 120px;

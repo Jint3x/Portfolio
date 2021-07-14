@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: // Place sitemap here
+Sitemap: https://jint3x.dev/sitemap.xml
