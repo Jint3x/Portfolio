@@ -260,9 +260,9 @@ function About() {
              text={
                 `
                  I hope that sometime in the future, I can gather enough experience and knowledge to be able to build my own programming community/academy 
-                 which will be focused on teaching the fundamentals of the digital world instead of simply showing how the newest shiny library works. It's a 
+                 which will be focus on teaching the fundamentals of the digital world instead of simply showing how the newest shiny library works. It's a 
                  long road ahead, but I'm fully willing to walk it. I always enjoy learning new things about computers, regardless of what they are about. All 
-                 technologies have their uniqueness and uses. Just like a tool in the tool-shed, use what is most appropriate.
+                 technologies have their uniqueness and uses. Just like a tool in a tool-shed, use what is most appropriate.
                 `
              }
             />

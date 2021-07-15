@@ -9,5 +9,12 @@ module.exports = {
           allExtensions: true,
         },
       },
+      {
+        resolve: 'gatsby-plugin-html-attributes',
+        options: {
+          lang: 'en',
+          prefix: "og: https://ogp.me/ns#",
+        }
+      }
     ],
   }
