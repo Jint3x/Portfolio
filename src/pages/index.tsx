@@ -19,7 +19,7 @@ function Homepage() {
             
                 <meta property={"og:title"} content={"Jint3x's Portfolio"} />
                 <meta property={"og:url"} content={"https://jint3x.dev"} />
-                <meta property={"og:image"} content={"https://jint3x.dev/profile_image.png"} />
+                <meta property={"og:image"} content={"https://jint3x.dev/og_image.jpg"} />
                 <meta property={"og:sitename"} content={"Jint3x Portfolio"} />
                 <meta property={"og:type"} content={"website"} />
                 <meta property={"og:description"} content={"Jint3x's personal portfolio! Here you can find information about me, the projects I've worked on, the technologies I can use and how to contact me."} />
